@@ -55,73 +55,104 @@
 <p align=center>Click the button to see a pop up that will ask you for what want to convert, degrees or celsius. Then add the number of degrees. After that, the pop up will tell you the conversion!</p>
 <br><br></div></div>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family: didot;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #8C9B84;
+            background-color: #f0f0f0;
+            
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px #8C9B84;
+            width: 300px;
+            text-align: center;
+            font-family: didot;
 
-<style>
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #8C9B84;
+            border-radius: 5px;
+            font-family: didot;
 
-h1{
-color: white;
-font-family: didot;
-}
+        }
+      
+        button {
+            padding: 10px;
+            border: none;
+            background-color: #8C9B84;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: didot;
 
-  p{
-    color: white;
-    font-family: didot; 
-  }
-  
-  button {
-    appearance: none;
-    background-color: #56654e;
-    border: 0px solid #fff;
-    color: #fff;
-    font-size: 16px;
-    font-family: didot;
-    font-weight: 600;
-    line-height: normal;
-    min-height: 2em;
-    min-width: 0;
-    outline: none;
-    border-radius: 7px;
-    padding: 10px 20px;
-    text-align: center;
-    user-select: none;
-   }
-   
-   button:disabled {
-    pointer-events: none;
-   }
-   
-   button:hover {
-    color: #778c6d;
-    background-color: #fff;
-   }
-   
-   button:active {
-    box-shadow: none;
-   }
+        }
+        button:hover {
+            background-color: #68785f;
+            font-family: didot;
+        }
+        .result {
+            margin-top: 15px;
+            font-weight: bold;
+                        font-family: didot;
+     }
+     
+     
+     select {
+     font-family: didot;
+     border: 1px solid #8C9B84;
+     border-radius: 5px;
+     color: grey;
 
-</style>
-
+     }
+     
+    </style>
+</head>
 <body>
-<center>
-<button onclick="convertTemperature()">Convert Temperature!</button>
-</center>
+
+<div class="card">
+    <h2>Temperature Converter</h2>
+    <input type="number" id="inputValue" placeholder="Enter temperature" />
+    <select id="unitType">
+        <option value="C">Celsius to Fahrenheit</option>
+        <option value="F">Fahrenheit to Celsius</option>
+    </select><br><br>
+    <button onclick="convertTemperature()">Convert</button>
+    <div class="result" id="result"></div>
+</div>
+
 <script>
-function convertTemperature() {
-var unit = prompt("Enter 'F' to convert from Fahrenheit to Celsius or 'C' to convert from Celsius to Fahrenheit:");
-var temperature = parseFloat(prompt("Enter the temperature:"));
+    function convertTemperature() {
+        const inputValue = parseFloat(document.getElementById('inputValue').value);
+        const unitType = document.getElementById('unitType').value;
+        let result;
 
-if (unit.toUpperCase() === 'F') {
-    var celsius = (temperature - 32) * (5 / 9);
-    alert(temperature + "°F is equal to " + celsius.toFixed(2) + "°C");
-} else if (unit.toUpperCase() === 'C') {
-    var fahrenheit = (temperature * (9 / 5)) + 32;
-    alert(temperature + "°C is equal to " + fahrenheit.toFixed(2) + "°F");
-} else {
-    alert("Invalid input. Please enter 'F' or 'C'.");
-}
-}
+        if (unitType === 'C') {
+            // Convert Celsius to Fahrenheit
+            result = (inputValue * 9/5) + 32;
+            document.getElementById('result').innerText = `${inputValue} °C = ${result.toFixed(2)} °F`;
+        } else {
+            // Convert Fahrenheit to Celsius
+            result = (inputValue - 32) * 5/9;
+            document.getElementById('result').innerText = `${inputValue} °F = ${result.toFixed(2)} °C`;
+        }
+    }
 </script>
-
 
 </body>
 </html>
