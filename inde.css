@@ -1,6 +1,6 @@
  body {
         font-family: didot;
-        color: #8C9B84;
+        color: #6b7d62;
         background-color: #8C9B84;
         margin: 0;
         margin-bottom: -50px;
@@ -9,25 +9,29 @@
     .socials {
         padding: 5px;
         text-align: right;
-        margin-top: -125px;
+        margin-top: -140px;
         margin-right: 20px;
         margin-bottom: -2px;
     }
 
-    #foo img[src="https://i.imgur.com/Gj4MPpM.png"]:hover {
-        opacity: 0.5;
+    body {
+      overflow: hidden;
+    }
+    
+    #foo img[src="https://i.ibb.co/jVWK1k0/fb.png"]:hover {
+        opacity: 0.8;
     }
 
-    #foo img[src="https://i.imgur.com/Q14nwSJ.png"]:hover {
-        opacity: 0.5;
+    #foo img[src="https://i.ibb.co/YRKqFdp/insta.png"]:hover {
+        opacity: 0.8;
     }
 
-    #foo img[src="https://i.imgur.com/WN3G22d.png"]:hover {
-        opacity: 0.5;
+    #foo img[src="https://i.ibb.co/WkP9V7c/twt.png"]:hover {
+        opacity: 0.8;
     }
 
-    #foo img[src="https://i.imgur.com/3FgTS80.png"]:hover {
-        opacity: 0.5;
+    #foo img[src="https://i.ibb.co/JFHgxJ4/yt.png"]:hover {
+        opacity: 0.8;
     }
 
     .image1 {
@@ -180,9 +184,9 @@
       .card {
         border-radius: 8px;
         padding: 40px;
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(10px);
         background-color: rgba(255,255, 255, 0.5);
-        box-shadow: 0 1px 12px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 12px rgba(0, 0, 0, 0.251);
         border: 1 px solid rgba(255, 255, 255, 0.3)
     
       }
